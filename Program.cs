@@ -1,4 +1,5 @@
 ﻿using System;
+using Fasade;
 
 namespace mapz_4
 {
@@ -6,7 +7,13 @@ namespace mapz_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DataManager dataManager = new DataManager();
+            ReviewManager reviewManager = new ReviewManager();
+
+            RatingFacade ratingPortal = new RatingFacade(dataManager, reviewManager);
+            ratingPortal.Start();
+
+
         }
     }
 }
