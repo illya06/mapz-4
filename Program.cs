@@ -11,15 +11,16 @@ namespace mapz_4
     {
         static void Main(string[] args)
         {
+            //facade
             DataManager dataManager = new DataManager();
             ReviewManager reviewManager = new ReviewManager();
             RatingFacade ratingPortal = new RatingFacade(dataManager, reviewManager);
             ratingPortal.Start();
 
+
+            //proxy
             List<string> resourses = new() { "EBEC", "Chess tournament", "WIPZ KR" };
-
             UserRequest request = new UserRequest();
-
             System.Console.WriteLine("\nSimulating work for unregistered User");
             foreach (var res in resourses)
             {
@@ -27,7 +28,6 @@ namespace mapz_4
                 Proxy proxy = new Proxy(realResource, 0); //unregistered user, wirh accessLevel = 0
                 request.Get(proxy);
             }
-
             System.Console.WriteLine("\nSimulating work for registered User");
             foreach (var res in resourses)
             {
@@ -36,6 +36,8 @@ namespace mapz_4
                 request.Get(proxy);
             }
 
+
+            //composite
             //student requesting info for PZ
             Client client = new Client();
             //PZ construction
