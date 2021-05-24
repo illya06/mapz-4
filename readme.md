@@ -1,2 +1,5 @@
-шаблон Фасад
-шаблон Проксі
+
+PATTERNS THAT I'VE MADE:
+    - Fasade
+    - Proxy
+    - Composite
