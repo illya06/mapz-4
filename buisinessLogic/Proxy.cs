@@ -1,6 +1,6 @@
 using System;
 
-namespace Proxy
+namespace Proxy_
 {
     public interface IResource
     {
@@ -18,7 +18,7 @@ namespace Proxy
 
         public void Request()
         {
-            Console.WriteLine($"\n\nData : {_content}\n");
+            Console.WriteLine($"Data : {_content}");
         }
     }
 
@@ -56,7 +56,7 @@ namespace Proxy
 
     public class UserRequest
     {
-        public void ClientCode(IResource Resource)
+        public void Get(IResource Resource)
         {
             Resource.Request();
         }
